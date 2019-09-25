@@ -11,7 +11,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Template>{!loading && <Home home={data} />}</Template>
+      <Template>{!loading && <Home {...{ data }} />}</Template>
     </div>
   );
 };

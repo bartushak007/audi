@@ -1,9 +1,13 @@
 import React from 'react';
 
-import './style/home.scss';
+import DescribeCar from '../../components/sections/describeCar';
 
-const Home = () => {
-  return <div className="home ">Home</div>;
+const Home = ({ data }) => {
+  return (
+    <div className="home ">
+      <DescribeCar {...data.describeCar} />
+    </div>
+  );
 };
 
 export default Home;

@@ -1,1 +1,24 @@
-{}
+{
+  "describeCar": {
+    "img": "images/sections/describeCar/suv.png",
+    "title": "2019 Q5",
+    "spec": "2.OT Quattro Premium",
+    "deposits": [
+      {
+        "title": "Everyone Qualifies",
+        "price": "499",
+        "priceInfo": "39 Mo. Lease",
+        "priceDescription": "$3,500 Due at Signing | $0",
+        "currency": "$"
+      },
+      {
+        "title": "Current Audi Owners",
+        "price": "479 ",
+        "priceInfo": "Mo. Lease",
+        "priceDescription": "$3,500 Due at Signing",
+        "currency": "$"
+      }
+    ],
+    "additional": "MSRP: $47,450. 10K mi/yr. lease excludes tax, title, and plate free. For qualified customers though Audi Financial Services.  Vehicle image shown for illustrative purposes only. #WC2776.  Offer ends 09/03/19."
+  }
+}

@@ -1,0 +1,42 @@
+.deposit {
+  margin-bottom: 2.3125rem;
+  line-height: 1;
+
+  &__title {
+    text-transform: uppercase;
+    color: $red;
+  }
+
+  &__price {
+    font-size: 1.0625rem;
+    font-family: 'audi bold';
+  }
+
+  &__price-amount {
+    font-size: 3rem;
+    margin: 0 0.3rem;
+  }
+
+  &__additional {
+    color: $grey;
+    font-size: 0.75rem;
+  }
+
+  @media (min-width: 690px) {
+    &__title {
+      font-size: 1.25rem;
+    }
+
+    &__price {
+      font-size: 1.4375rem;
+    }
+
+    &__price-amount {
+      font-size: 3.375rem;
+    }
+
+    &__additional {
+      font-size: 0.875rem;
+    }
+  }
+}
