@@ -1,0 +1,47 @@
+html {
+  font-size: 100%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'audi', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 300;
+  color: $dark;
+
+  @media (min-width: 600px) {
+    font-size: 1.125rem;
+  }
+
+  @media (min-width: 1025px) {
+    font-size: 1.375rem;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
