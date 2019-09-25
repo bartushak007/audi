@@ -1,8 +1,6 @@
 .describe {
   position: relative;
   padding: 3.125rem;
-  // padding-top: 7.5625rem;
-  // padding-bottom: 6.375rem;
   max-width: 94rem;
   margin: 0 auto;
 
@@ -19,9 +17,6 @@
   &__picture {
     width: 100%;
     margin: 0 auto;
-  }
-
-  &__details {
   }
 
   &__head {
@@ -59,7 +54,7 @@
   &__border {
     z-index: 1;
     position: absolute;
-    top: 2.5rem;
+    top: 6.5rem;
     right: 1.25rem;
     bottom: 1.25rem;
     left: 1.25rem;

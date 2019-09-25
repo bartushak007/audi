@@ -1,0 +1,39 @@
+.contact-form {
+  &__radio-container {
+    margin: 1.75rem 0 2.625rem;
+    display: flex;
+    max-width: 21rem;
+    font-size: 0.875rem;
+    color: $darkGrey;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+.custom-radio-email:before,
+.custom-radio-phone:before {
+  content: '';
+  display: inline-block;
+  margin-right: 1rem;
+  border: 1px solid $red;
+  border-radius: 1rem;
+  width: 1rem;
+  height: 1rem;
+  background: transparent;
+}
+
+.radio-email {
+  &:checked + .custom-radio-email {
+    &:before {
+      background: $red;
+    }
+  }
+}
+
+.radio-phone {
+  &:checked + .custom-radio-phone {
+    &:before {
+      background: $red;
+    }
+  }
+}

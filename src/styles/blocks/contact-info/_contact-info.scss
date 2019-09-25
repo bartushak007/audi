@@ -1,0 +1,14 @@
+.contact-info {
+  max-width: 45rem;
+  padding: 5.625rem 1.25rem 6rem;
+
+  &__title {
+    font-family: 'audi bold';
+    text-transform: uppercase;
+    margin-bottom: 1.625rem;
+  }
+
+  &__text {
+    margin: 1rem 0;
+  }
+}
