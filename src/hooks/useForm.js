@@ -1,29 +1,27 @@
 import { useState, useEffect } from 'react';
 
-const validate = (input, errors, name, schemes) => {
-  if (schemes[name]) {
-    const { regExp, errorMessage, required } = schemes[name];
+const validate = (
+  value,
+  { regExp, errorMessage = 'Field is not valid', required }
+) => {
+  if (required && value === '')
+    return { valid: false, errorMessage: 'Field is required' };
 
-    if (required && input[name] === '')
-      return { ...errors, [name]: 'field is required' };
-
-    return regExp && !new RegExp(regExp).test(input[name]) && input[name]
-      ? { ...errors, [name]: errorMessage }
-      : { ...errors, [name]: '' };
-  }
-
-  return errors;
+  return regExp && !new RegExp(regExp).test(value) && value
+    ? { valid: false, errorMessage }
+    : { valid: true, errorMessage: '' };
 };
 
 const useForm = (initialValues, onSubmit) => {
-  const [formState, setFormState] = useState(initialValues.initial);
-  const [errors, setErrors] = useState({});
+  const [formState, setFormState] = useState(initialValues);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [wasSubmitted, setWasSubmitted] = useState(false);
 
   useEffect(() => {
     if (
-      Object.entries(errors).every(([_, val]) => val === '') &&
+      Object.entries(formState).every(
+        ([_, { error }]) => error && error.valid
+      ) &&
       isSubmitting
     ) {
       onSubmit(formState);
@@ -32,23 +30,20 @@ const useForm = (initialValues, onSubmit) => {
     } else {
       setIsSubmitting(false);
     }
-  }, [errors, onSubmit, isSubmitting, formState, initialValues, wasSubmitted]);
+  }, [onSubmit, isSubmitting, formState, initialValues, wasSubmitted]);
 
   const handleSubmit = event => {
     event.preventDefault();
 
     setIsSubmitting(true);
-    Object.entries(formState).forEach(([name, value]) => {
-      setErrors(errors => ({
-        ...errors,
-        ...validate(
-          { [name]: value },
-          errors,
-          name,
-          initialValues.validationSchemes
-        )
-      }));
-    });
+    setFormState(
+      Object.entries(formState).reduce((newState, [key, shema]) => {
+        return {
+          ...newState,
+          [key]: { ...shema, error: validate(shema.value, shema) }
+        };
+      }, {})
+    );
   };
 
   const handleChange = event => {
@@ -58,25 +53,19 @@ const useForm = (initialValues, onSubmit) => {
 
     setFormState(formState => ({
       ...formState,
-      [name]: value
-    }));
-
-    setErrors(errors => ({
-      ...errors,
-      ...validate(
-        { [name]: value },
-        errors,
-        name,
-        initialValues.validationSchemes
-      )
+      [name]: {
+        ...formState[name],
+        value,
+        error: validate(value, formState[name])
+      }
     }));
   };
 
   return {
+    setFormState,
     formState,
     handleChange,
     handleSubmit,
-    errors,
     wasSubmitted,
     setWasSubmitted
   };

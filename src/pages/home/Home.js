@@ -1,14 +1,19 @@
 import React from 'react';
 
 import DescribeCar from '../../components/sections/describeCar';
-import ContactInfo from '../../components/blocks/contactInfo';
+import ToRecommendContent from '../../components/sections/toRecommendContent';
 
 const Home = ({ data }) => {
   return (
     <div className="home ">
       <DescribeCar {...data.describeCar} />
       <div>
-        <ContactInfo {...data.contactInfo} />
+        {
+          <ToRecommendContent
+            contactUs={data.contactUs}
+            letFindIt={data.letFindIt}
+          />
+        }
       </div>
     </div>
   );

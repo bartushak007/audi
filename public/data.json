@@ -21,11 +21,240 @@
     ],
     "additional": "MSRP: $47,450. 10K mi/yr. lease excludes tax, title, and plate free. For qualified customers though Audi Financial Services.  Vehicle image shown for illustrative purposes only. #WC2776.  Offer ends 09/03/19."
   },
-  "contactInfo": {
+  "contactUs": {
     "title": "Contact info",
     "text": [
       "We appreciate your interest in our inventory, and  apologize we do not have model details displaying on the website at this time.",
       "Please fill the form out below and our team will quickly respond, or, please call us at 765-470-4091 for more information."
-    ]
+    ],
+    "submit": "Contact Us",
+    "schema": {
+      "firstName": {
+        "value": "",
+        "required": true,
+        "placeholder": "First name"
+      },
+      "secondName": {
+        "value": "",
+        "required": true,
+        "placeholder": "Second name"
+      },
+      "email": { "required": true, "value": "", "placeholder": "E-mail" },
+      "phone": {
+        "value": "",
+        "placeholder": "Phone",
+        "required": true,
+        "regExp": "[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\\s./0-9]*$",
+        "errorMessage": "456789"
+      },
+      "prefer": {
+        "value": "",
+        "type": "radio",
+        "radioOptions": [
+          {
+            "value": "phone",
+            "label": "Phone",
+            "className": "radio-phone hidden",
+            "labelClass": "custom-radio-phone"
+          },
+          {
+            "value": "email",
+            "label": "E-mail",
+            "className": "radio-email hidden",
+            "labelClass": "custom-radio-email"
+          }
+        ]
+      }
+    }
+  },
+  "letFindIt": {
+    "title": "CAN'T FIND WHAT YOU LOOKING FOR?",
+    "styleForm": "recommend__contact-us-form",
+    "submit": "Let us find it",
+    "schema": {
+      "condition": {
+        "required": true,
+        "value": "",
+        "className": "any-type",
+        "type": "select",
+        "options": [
+          {
+            "value": "any-type",
+            "text": "Any type (New and Pre-owned)*"
+          },
+          {
+            "value": "New",
+            "text": "New"
+          },
+          {
+            "value": "Pre-owned",
+            "text": "Pre-owned"
+          },
+          {
+            "value": "any-type",
+            "text": "Any type"
+          }
+        ]
+      },
+      "from": {
+        "required": true,
+        "value": "",
+        "className": "from",
+        "type": "select",
+        "options": [
+          {
+            "value": "",
+            "text": "From 1999*"
+          },
+          {
+            "value": "1999",
+            "text": "1999"
+          },
+          {
+            "value": "2000",
+            "text": "2000"
+          }
+        ]
+      },
+      "to": {
+        "required": true,
+        "className": "to",
+        "value": "",
+        "type": "select",
+        "options": [
+          {
+            "value": "",
+            "text": "to 2019*"
+          },
+          {
+            "value": "2019",
+            "text": "2019"
+          },
+          {
+            "value": "2018",
+            "text": "2018"
+          }
+        ]
+      },
+      "brand": {
+        "required": true,
+        "className": "brand",
+        "value": "",
+        "type": "select",
+        "options": [
+          {
+            "value": "",
+            "text": "Select brand *"
+          },
+          {
+            "value": "bmw",
+            "text": "BMW"
+          },
+          {
+            "value": "audi",
+            "text": "AUDI"
+          }
+        ]
+      },
+      "kind": {
+        "className": "kind",
+        "required": true,
+        "value": "",
+        "type": "select",
+        "upsTo": "brand",
+        "options": {
+          "audi": [
+            {
+              "value": "q5",
+              "text": "q5"
+            },
+            {
+              "value": "a6",
+              "text": "a6"
+            }
+          ],
+          "bmw": [
+            {
+              "value": "750i",
+              "text": "750i"
+            },
+            {
+              "value": "m5",
+              "text": "m5"
+            },
+            {
+              "value": "m8",
+              "text": "m8"
+            }
+          ]
+        }
+      },
+      "price": {
+        "required": true,
+        "className": "price",
+        "value": "",
+        "type": "select",
+        "options": [
+          {
+            "value": "",
+            "text": "Price (max)*"
+          },
+          {
+            "value": "min",
+            "text": "min"
+          },
+          {
+            "value": "max",
+            "text": "max"
+          }
+        ]
+      },
+      "trim": {
+        "required": true,
+        "className": "trim",
+        "value": "",
+        "type": "select",
+        "options": [
+          {
+            "value": "",
+            "text": "Trim*"
+          },
+          {
+            "value": "1",
+            "text": "1"
+          },
+          {
+            "value": "2",
+            "text": "2"
+          }
+        ]
+      },
+      "color": {
+        "required": true,
+        "className": "color",
+        "value": "",
+        "type": "select",
+        "options": [
+          {
+            "value": "",
+            "text": "Color*"
+          },
+          {
+            "value": "blue",
+            "text": "blue"
+          },
+          {
+            "value": "red",
+            "text": "red"
+          }
+        ]
+      },
+      "message": {
+        "className": "message",
+        "value": "",
+        "required": true,
+        "placeholder": "Message"
+      }
+    }
   }
 }
